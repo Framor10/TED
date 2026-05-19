@@ -1,0 +1,139 @@
+
+ *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background: linear-gradient(135deg,#0f172a,#1e3a8a,#06b6d4);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px;
+    }
+
+    .WhatsApp-btn{
+      display: inline;block-size: auto;
+      background-color: #25d366;
+      color: whitesmoke;
+      padding: 12px,24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+
+    }
+    .WhatsApp-btn{
+      background-color: #20b358;
+    }
+
+    .container{
+      width:100%;
+      max-width:900px;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(12px);
+      border-radius:20px;
+      padding:40px;
+      color:white;
+      box-shadow:0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    .header{
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .header h1{
+      font-family:'Orbitron', sans-serif;
+      font-size:40px;
+      margin-bottom:10px;
+    }
+
+    .header p{
+      color:#dbeafe;
+      line-height:1.7;
+    }
+
+    form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .full-width{
+      grid-column:1 / 3;
+    }
+
+    .input-group{
+      display:flex;
+      flex-direction:column;
+    }
+
+    label{
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    input,
+    select{
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      font-size:15px;
+      outline:none;
+    }
+
+    input:focus,
+    select:focus{
+      border:3px solid #06b6d4;
+    }
+
+    .btn{
+      grid-column:1 / 3;
+      padding:16px;
+      border:none;
+      border-radius:14px;
+      background:#06b6d4;
+      color:white;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#0284c7;
+      transform:scale(1.02);
+    }
+
+    .error{
+      color:#fecaca;
+      font-size:13px;
+      margin-top:5px;
+    }
+
+    .footer{
+      text-align:center;
+      margin-top:30px;
+      color:#e2e8f0;
+    }
+
+    @media(max-width:768px){
+
+      form{
+        grid-template-columns:1fr;
+      }
+
+      .full-width,
+      .btn{
+        grid-column:1;
+      }
+
+      .header h1{
+        font-size:28px;
+      }
+    }

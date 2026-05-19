@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TED Internship Registration</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Stylesheet.css">
+  <img src="TED LOGO.jpg" alt="LOGO">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>TED DATABASE INTERNSHIP REGISTRATION FORM</h1>
+
+    <p>
+      Tiyiselani Education and Development Pty Ltd.<br>
+      Internship Registration for NCV Level 4, N6 & Graduates
+      Located at 1727, Pastral street, Elim, Pastral Village
+    </p>
+
+
+  </div>
+
+  <form id="registrationForm" action="save.php" method="POST">
+
+    <div class="input-group">
+      <label>Full Name</label>
+      <input type="text" name="fullname" id="fullname" required>
+      <small class="error" id="nameError"></small>
+    </div>
+
+    <div class="input-group">
+      <label>Surname</label>
+      <input type="text" name="surname" required>
+    </div>
+
+    <div class="input-group">
+      <label>ID Number</label>
+      <input type="text" name="ID Number" required>
+    </div>
+    
+    <div class="input-group">
+      <label>Qualification</label>
+      <input type="text" name="qualification" required>
+    </div>
+
+    <div class="input-group">
+      <label>TVET College Name</label>
+      <input type="text" name="college" required>
+    </div>
+
+    <div class="input-group">
+      <label>Email Address</label>
+      <input type="email" name="email" id="email" required>
+      <small class="error" id="emailError"></small>
+    </div>
+
+    <div class="input-group">
+      <label>Phone Number</label>
+      <input type="tel" name="phone" id="phone" required>
+      <small class="error" id="phoneError"></small>
+    </div>
+
+    <div class="input-group full-width">
+      <label>Province</label>
+
+      <select name="province" required>
+        <option value="">Select Province</option>
+        <option>Gauteng</option>
+        <option>Limpopo</option>
+        <option>Mpumalanga</option>
+        <option>KwaZulu-Natal</option>
+        <option>Free State</option>
+        <option>North West</option>
+        <option>Western Cape</option>
+        <option>Eastern Cape</option>
+        <option>Northern Cape</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn">
+      Submit Registration
+    </button>
+
+  </form>
+
+  <div class="footer">
+    <p>Email: tiyiselanited@gmail.com | WhatsApp: 0694536449</p>
+    <a href="https://wa.me/0647718353"target="blank" class="WhatsApp-btn">Chat on WhatsApp</a>
+
+    About us. Contact us on WhatsApp and we will help you
+  </div>
+
+</div>
+
+<script>
+
+  const form = document.getElementById('registrationForm');
+
+  form.addEventListener('submit', function(e){
+
+    let valid = true;
+
+    // Full Name Validation
+    const fullname = document.getElementById('fullname').value.trim();
+    const nameError = document.getElementById('nameError');
+
+    if(fullname.length < 3){
+      nameError.innerText = "Full name must be at least 3 characters.";
+      valid = false;
+    } else {
+      nameError.innerText = "";
+    }
+
+    // Email Validation
+    const email = document.getElementById('email').value.trim();
+    const emailError = document.getElementById('emailError');
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(!email.match(emailPattern)){
+      emailError.innerText = "Please enter a valid email address.";
+      valid = false;
+    } else {
+      emailError.innerText = "";
+    }
+
+    // Phone Validation
+    const phone = document.getElementById('phone').value.trim();
+    const phoneError = document.getElementById('phoneError');
+
+    const phonePattern = /^[0-9]{10}$/;
+
+    if(!phone.match(phonePattern)){
+      phoneError.innerText = "Phone number must contain 10 digits.";
+      valid = false;
+    } else {
+      phoneError.innerText = "";
+    }
+
+    if(!valid){
+      e.preventDefault();
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
